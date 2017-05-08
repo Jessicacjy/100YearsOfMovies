@@ -23,7 +23,7 @@
             var pc1;
             
             // load csv file and create the chart
-            d3.csv('sub_data_social.csv', function(data) {
+            d3.csv('https://jessicacjy.github.io/100YearsOfMovies/sub_data_social.csv', function(data) {
                    pc1 = d3.parcoords()("#chart")
                    .data(data)
                    .hideAxis(["movie_title"])
