@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+    <style>
+        
+        svg {
+            font: 10px sans-serif;
+        }
+    
+    .background path {
+        fill: none;
+        stroke: #ddd;
+        shape-rendering: crispEdges;
+    }
+    
+    .foreground path {
+        fill: none;
+        stroke: steelblue;
+    }
+    
+    .brush .extent {
+        fill-opacity: .3;
+        stroke: #fff;
+        shape-rendering: crispEdges;
+    }
+    
+    .axis line,
+    .axis path {
+        fill: none;
+        stroke: #000;
+        shape-rendering: crispEdges;
+    }
+    
+    .axis text {
+        text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, 0 -1px 0 #fff, -1px 0 0 #fff;
+    cursor: move;
+    }
+
+</style>
+<body>
+
+    <head>
+        <link rel="stylesheet" href="http://syntagmatic.github.io/parallel-coordinates/d3.parcoords.css" />
+    </head>
+    <script src="http://d3js.org/d3.v3.js"></script>
+    <script src="https://syntagmatic.github.io/parallel-coordinates/d3.parcoords.js"></script>
+    <div id="chart" class="parcoords"></div>
+    <script>
+    cars = 'https://syntagmatic.github.io/parallel-coordinates/examples/data/cars.csv'
+    
+    M  = 10;
+    oH = window.innerHeight
+    oW = window.innerWidth
+    H  = oH - M - M
+    W  = oW - M - M
+    
+    blue_to_brown = d3.scale.linear()
+    .domain [9, 50]
+    .range ["steelblue", "brown"]
+    .interpolate d3.interpolateLab
+    
+    window.onresize = ->
+    oH = window.innerHeight
+    oW = window.innerWidth
+    H  = oH - M - M
+    W  = oW - M - M
+    el.width W
+    .height H
+    .resize()
+    .render()
+    
+    el = d3.parcoords()("#chart")
+    .width W
+    .height H
+    
+    d3.csv cars, (data)->
+    el.data data
+    .hideAxis ["name"]
+    .composite "darken"
+    .color (d) -> blue_to_brown(d['economy (mpg)'])
+    .alpha(0.35)
+    .render()
+    .brushMode("1D-axes")
+    .interactive()
+</script>
+</body>
