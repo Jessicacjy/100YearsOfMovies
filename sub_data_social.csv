@@ -1,4 +1,4 @@
-group,movie_imdb_link,Cast FB Likes,name,Actor 1 FB Likes,Number of Voted Users,Director FB Likes,Number of Critic for Reviews,Number of Users for Reviews,Budget,Domestic Adjusted,Imdb Score
+group,movie_imdb_link,Cast FB Likes,name,Actor 1 FB Likes,Number of Voted Users,Director FB Likes,Number of Critic for Reviews,Number of Users for Reviews,Budget,Domestic Gross,Imdb Score
 Comedy Drama,http://www.imdb.com/title/tt0357413/?ref_=fn_tt_tt_1,656730,"AnchormanTheLegendofRonBurgundy, director: Adam McKay",210000,267921,285,181,577,37650961.68,126713421.5,7.2
 Drama,http://www.imdb.com/title/tt1907639/?ref_=fn_tt_tt_1,263584,"Hardflip, director: Johnny Remo",200000,606,74,2,5,1170572.956,113234.2044,5.6
 Thriller Drama,http://www.imdb.com/title/tt2380301/?ref_=fn_tt_tt_1,283939,"Treachery, director: Travis Romero",160000,344,4,5,5,708922.5754,0,3.9
